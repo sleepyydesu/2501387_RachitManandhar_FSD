@@ -173,6 +173,10 @@ h1{
     justify-content: space-between;
 }
 
+#mbr {
+    display: none;
+}
+
 .Ctext p{
     font-size: 20px;
     font-weight: 700;
@@ -257,4 +261,33 @@ h1{
     height: 24px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+@media (max-width: 1200px) {
+    .Image {
+        display: none;
+    }
+
+    .Projects {
+        flex-direction: column;
+    }
+
+    .PBox {
+        width:100%
+    }
+
+    .Cform {
+        padding-right: 0px;
+    }
+
+    .Bio {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    #mbr {
+        display: inline;
+    }
 }
