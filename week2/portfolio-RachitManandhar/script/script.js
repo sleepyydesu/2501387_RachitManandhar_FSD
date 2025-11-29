@@ -41,14 +41,8 @@ form.addEventListener("submit", function(e) {
 })
 
 function toggleNavBar () {
-    navBar = !navBar;
-
-    if (navBar) {
-        document.querySelector(".navMobBar").style.display = "block";
-    }
-    else {
-        document.querySelector(".navMobBar").style.display = "none";
-    }
+    document.querySelector(".navMobBar").classList.toggle("open");
+    document.querySelector("body").classList.toggle("no-scroll");
 }
 
 window.addEventListener('scroll', function() {
