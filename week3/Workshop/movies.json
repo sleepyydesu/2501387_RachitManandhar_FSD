@@ -1,0 +1,28 @@
+{
+  "movies": [
+    {
+      "id": "2",
+      "title": "Pulp Fiction",
+      "genre": "Crime",
+      "year": 1994
+    },
+    {
+      "id": "3",
+      "title": "Dune",
+      "genre": "Sci-Fi",
+      "year": 2021
+    },
+    {
+      "id": "4",
+      "title": "Kimetsu no Yaiba Infinity Castle",
+      "genre": "Anime",
+      "year": 2025
+    },
+    {
+      "id": "5",
+      "title": "Chainsaw Man - The Movie: Reze Arc",
+      "genre": "Anime",
+      "year": 2025
+    }
+  ]
+}
