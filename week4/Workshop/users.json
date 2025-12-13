@@ -1,0 +1,32 @@
+[
+    {
+        "firstname": "Rachit",
+        "lastname": "Manandhar",
+        "email": "rachit2063@gmail.com",
+        "password": "$2y$10$r\/Gx6W8SooGIyNpnyuWgPeo7lzafxQKgm\/s\/pzNLIqRKe9JDEXtRa"
+    },
+    {
+        "firstname": "Alexandra",
+        "lastname": "Morgan",
+        "email": "alexandra.morgan@gmail.com",
+        "password": "$2y$10$xUdq7gB8me39hHx6AJOiDeWWYAJuYBPvwvI1P1F33q9JrwY8lchX6"
+    },
+    {
+        "firstname": "Daniel",
+        "lastname": "Rodriguez",
+        "email": "daniel.rodriguez@gmail.com",
+        "password": "$2y$10$mt05tlx4blVkyohf4qy7b.qaFy1vIMcRpz2JzXVEzPlmMbg3qseVa"
+    },
+    {
+        "firstname": "Priya",
+        "lastname": "Shah",
+        "email": "priya.shah@gmail.com",
+        "password": "$2y$10$iuvIemHps1pKEAqLj8z7k.Dbj0sq.WYi7YIY4yp8p3U9kqtqtL8zi"
+    },
+    {
+        "firstname": "Michael",
+        "lastname": "Thompson",
+        "email": "michael.thompson@gmail.com",
+        "password": "$2y$10$qYUVZ4b3amTTpOn5be.dYeGrosJn9QYrsvE5hEHzcTLYRVV2ueppy"
+    }
+]

@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: cursive;
+}
+
+.login-container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+  padding: 30px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.formName {
+  display: flex;
+  gap: 10px;
+}
+
+.login-container input {
+  width: 100%;
+  margin: 12px 0;
+  padding: 10px 5px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
+  color: white;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.login-container input::placeholder {
+  color: rgba(255, 255, 255 ,1);
+  font-family: cursive;
+}
+
+.login-container input:focus {
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
+}
+
+.formDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: cursive;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  display: block;
+  margin-top: 4px;
+}
+
+#feedback {
+  color: red;
+  font-size: 14px;
+  display: block;
+  margin-top: 4px;
+}
