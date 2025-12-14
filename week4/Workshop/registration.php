@@ -5,6 +5,7 @@
         "lastname" => "",
         "email" => "",
         "password" => "",
+        "confirmPassword" => "",
         "feedback" => "",
     ];
 
@@ -15,6 +16,7 @@
             "lastname" => "",
             "email" => "",
             "password" => "",
+            "confirmPassword" => "",
             "feedback" => "",
         ];
 
@@ -47,25 +49,35 @@
                 $feedbacks["password"] = "Please enter your password";
                 $continue = false;
             } 
+            else if (empty($_POST["confirmPassword"])) {
+                $feedbacks["confirmPassword"] = "Please re-enter your password";
+                $continue = false;
+            }
             else {
-                if (strlen($_POST["password"]) < 8) {
-                    $feedbacks["password"] = "Password must be atleast 8 characters";
-                    $continue = false;
+                if ($_POST["confirmPassword"] === $_POST["password"]) {
+                    if (strlen($_POST["password"]) < 8) {
+                        $feedbacks["password"] = "Password must be atleast 8 characters";
+                        $continue = false;
+                    }
+                    if (!preg_match('/[\W]/', $_POST["password"])) {
+                        $feedbacks["password"] = "Password must contain atleast one special character";
+                        $continue = false;
+                    }
+                    if (!preg_match('/\d/', $_POST["password"])) {
+                        $feedbacks["password"] = "Password must contain atleast one number";
+                        $continue = false;
+                    }
+                    if (!preg_match('/[a-z]/', $_POST["password"])) {
+                        $feedbacks["password"] = "Password must contain atleast one lowercase letter";
+                        $continue = false;
+                    }
+                    if (!preg_match('/[A-Z]/', $_POST["password"])) {
+                        $feedbacks["password"] = "Password must contain atleast one uppercase letter";
+                        $continue = false;
+                    }
                 }
-                if (!preg_match('/[\W]/', $_POST["password"])) {
-                    $feedbacks["password"] = "Password must contain atleast one special character";
-                    $continue = false;
-                }
-                if (!preg_match('/\d/', $_POST["password"])) {
-                    $feedbacks["password"] = "Password must contain atleast one number";
-                    $continue = false;
-                }
-                if (!preg_match('/[a-z]/', $_POST["password"])) {
-                    $feedbacks["password"] = "Password must contain atleast one lowercase letter";
-                    $continue = false;
-                }
-                if (!preg_match('/[A-Z]/', $_POST["password"])) {
-                    $feedbacks["password"] = "Password must contain atleast one uppercase letter";
+                else {
+                    $feedbacks["confirmPassword"] = "Passwords do not match.";
                     $continue = false;
                 }
             }
@@ -150,6 +162,10 @@
         <div class="formPassword">
             <input id="password" type="password" name="password" placeholder="Password">
             <span class="error"><?php echo $feedbacks["password"]; ?></span>
+        </div>
+        <div class="formPassword">
+            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password">
+            <span class="error"><?php echo $feedbacks["confirmPassword"]; ?></span>
         </div>
       </div>
       <p id="feedback"><?php echo $feedbacks["feedback"]; ?></p>
