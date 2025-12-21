@@ -1,0 +1,3 @@
+John Doe;johndoe@gmail.com;HTML,CSS,JS,Java
+Ram Maharjan;rammaharjan@gmail.com;HTML,CSS
+Shyam Bahadur;shyambahadur123@gmail.com;C#,C++,Python
