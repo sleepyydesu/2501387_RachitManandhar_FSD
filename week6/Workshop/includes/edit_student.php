@@ -11,13 +11,17 @@
         $email  = $_GET['email'];
         $course = $_GET['course'];
 
-        mysqli_query(
+        $stmt = mysqli_prepare(
             $conn,
             "UPDATE students 
-            SET name='$name', email='$email', course='$course' 
-            WHERE id=$id"
+            SET name = ?, email = ?, course = ?
+            WHERE id = ?"
         );
 
+        mysqli_stmt_bind_param($stmt, "sssi", $name, $email, $course, $id);
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
     }
     
     header("Location: " . $_SERVER['HTTP_REFERER']);

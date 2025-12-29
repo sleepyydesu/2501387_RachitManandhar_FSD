@@ -8,19 +8,24 @@
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
     
-    function saveStudent($name, $email, $course, $conn) {
-        $name  = mysqli_real_escape_string($conn, $name);
-        $email = mysqli_real_escape_string($conn, $email);
-        $course  = mysqli_real_escape_string($conn, $course);
+    function saveStudent($name, $email, $course, $conn)
+    {
+        $stmt = mysqli_prepare(
+            $conn,
+            "INSERT INTO students (name, email, course) VALUES (?, ?, ?)"
+        );
 
-        $sql = "INSERT INTO students (name, email, course) VALUES ('$name', '$email', '$course')";
-
-        $result = mysqli_query($conn, $sql);
-        if ($result) {
-            return true;
-        } else {
+        if (!$stmt) {
             return false;
         }
+
+        mysqli_stmt_bind_param($stmt, "sss", $name, $email, $course);
+
+        $result = mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+
+        return $result;
     }
 
     function fetchStudents($conn) {
